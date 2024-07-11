@@ -1,0 +1,38 @@
+<div class="lottery-container">
+  <h2 class="lottery-title">Ứng dụng Rút thăm May mắn</h2>
+
+  <div class="input-container">
+    <input [(ngModel)]="newParticipant" placeholder="Nhập tên người tham gia" class="participant-input">
+    <button (click)="addParticipant()" class="btn btn-add">Thêm</button>
+  </div>
+
+  <div class="participants-container">
+    <h3>Danh sách người tham gia:</h3>
+    @if (participants.length === 0) {
+    <p class="no-participants">Chưa có người tham gia nào.</p>
+    } @else {
+    <ul class="participants-list">
+      @for (participant of participants; track participant; let i = $index) {
+      <li class="participant-item">
+        {{ participant }}
+        <button (click)="removeParticipant(i)" class="btn btn-remove"></button>
+      </li>
+      }
+    </ul>
+    }
+  </div>
+
+  <div class="action-buttons">
+    <button (click)="drawWinner()" [disabled]="participants.length === 0" class="btn btn-draw">
+      Rút thăm
+    </button>
+    <button (click)="resetLottery()" class="btn btn-reset">Đặt lại</button>
+  </div>
+
+  @if (winner) {
+  <div class="winner-announcement">
+    <h3>🎉 Người trúng thưởng là:</h3>
+    <p class="winner-name">{{ winner }}</p>
+  </div>
+  }
+</div>
