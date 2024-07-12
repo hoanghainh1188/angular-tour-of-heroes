@@ -1,0 +1,11 @@
+<div class="match-detail" *ngIf="match">
+  <h2>{{ match.matchName }}</h2>
+  <p><strong>Ngày:</strong> {{ match.date }}</p>
+  <p><strong>Thời gian:</strong> {{ match.time }}</p>
+  <p><strong>Địa điểm:</strong> {{ match.venue }}</p>
+  <p><strong>Đội nhà:</strong> {{ match.homeTeam }}</p>
+  <p><strong>Đội khách:</strong> {{ match.awayTeam }}</p>
+  <p><strong>Giá vé:</strong> {{ match.price | currency:'VND':'symbol':'1.0-0' }}</p>
+  <p><strong>Số vé còn lại:</strong> {{ match.availableTickets }}</p>
+  <button>Đặt vé</button>
+</div>

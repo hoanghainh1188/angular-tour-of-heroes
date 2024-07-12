@@ -1,0 +1,26 @@
+<div class="booking-container">
+  <div class="view-toggle">
+    <button (click)="toggleView('list')" [class.active]="activeView === 'list'">Danh sách vé</button>
+    <button (click)="toggleView('calendar')" [class.active]="activeView === 'calendar'">Lịch trận đấu</button>
+  </div>
+
+  @if (activeView === 'list') {
+  <div class="ticket-list">
+    @for (ticket of tickets; track ticket.id) {
+    <div class="ticket-item" (click)="goToTicketDetail(ticket.id)">
+      <h3>{{ ticket.matchName }}</h3>
+      <p>Ngày: {{ ticket.date }}</p>
+      <p>Giá: {{ ticket.price | currency:'VND':'symbol':'1.0-0' }}</p>
+      <p [class.available]="ticket.available" [class.unavailable]="!ticket.available">
+        {{ ticket.available ? 'Còn vé' : 'Hết vé' }}
+      </p>
+    </div>
+    }
+  </div>
+  } @else {
+  <div class="calendar-view">
+    <!-- Ở đây bạn sẽ thêm component calendar -->
+    <app-match-calendar [events]="events"></app-match-calendar>
+  </div>
+  }
+</div>
