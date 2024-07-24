@@ -1,0 +1,8 @@
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.legend {
+  display: flex;
+  align-items: center;
+}

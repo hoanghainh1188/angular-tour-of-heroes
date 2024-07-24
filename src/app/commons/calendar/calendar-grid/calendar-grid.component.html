@@ -1,0 +1,20 @@
+<!--@if (true) {-->
+<div class="weekdays">
+  <span>日</span>
+  <span>月</span>
+  <span>火</span>
+  <span>水</span>
+  <span>木</span>
+  <span>金</span>
+  <span>土</span>
+</div>
+<div class="days">
+  @for (day of days; track day.date) {
+    <app-day [date]="day.date" [hasEvent]="day.hasEvent"></app-day>
+  }
+</div>
+<div class="legend">
+  <span class="icon"></span>
+  <span>所持しているチケットの日付（バスケ、サッカー、コンサート、アクティビティ）</span>
+</div>
+<!--}-->

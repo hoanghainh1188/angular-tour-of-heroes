@@ -1,0 +1,11 @@
+<app-calendar-header
+  [currentMonth]="currentMonth"
+  [currentYear]="currentYear"
+  (prevMonth)="onPrevMonth()"
+  (nextMonth)="onNextMonth()">
+</app-calendar-header>
+<app-calendar-grid
+  [days]="days"
+  [currentMonth]="currentMonth"
+  [currentYear]="currentYear">
+</app-calendar-grid>

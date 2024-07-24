@@ -1,0 +1,13 @@
+<div class="header">
+  <button class="back">戻る</button>
+  <h1>日付の選択</h1>
+  <button class="cart"></button>
+</div>
+<p>駐車場予約したい日付を選択してください</p>
+<!--@if (true) {-->
+<div class="month-selector">
+  <button (click)="onPrevClick()">前の月</button>
+  <span>{{ currentMonth + 1 }}月 {{ currentYear }}</span>
+  <button (click)="onNextClick()">次の月</button>
+</div>
+<!--}-->

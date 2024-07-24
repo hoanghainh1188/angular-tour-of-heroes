@@ -1,0 +1,17 @@
+.day {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}
+.has-event {
+  background-color: #f0f0f0;
+}
+.event-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
